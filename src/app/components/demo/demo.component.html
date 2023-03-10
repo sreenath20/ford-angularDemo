@@ -1,0 +1,118 @@
+<p>demo works!</p>
+
+<h1>Data binding</h1>
+<h3>one way data binding</h3>
+<h3>Interpollation </h3>
+<p>{{title}}</p>
+<p>{{date}}</p>
+
+<h3>Property binding </h3>
+<img [src]="imageSrc">
+
+<h3>Event binding </h3>
+
+<button (click)="greetUser()">Greetings</button>
+
+<h3>Two way data Binding </h3>
+<h3>User Login Form:</h3>
+<form>
+  User Name:<br>
+  <input type="text" [(ngModel)]="name" name="firstName">
+  <br>
+  User password:<br>
+  <input type="password" [(ngModel)]="password" name="password">
+  <br>
+  <input type="button" (click)="displayName()" value="Login">
+</form>
+<p>Name:{{name}}:{{password}}</p>
+<h1>Structural Directives </h1>
+<h3>*ngIf</h3>
+<div *ngIf="isVisible">
+  <p>This is my para about Ford</p>
+</div>
+<div *ngIf="a > b">
+  <p>This is my para visible if a > b {{a}}>{{b}}</p>
+</div>
+
+<div *ngIf="a < b">
+  <p>This is my para visible if a < b {{a}}<{{b}}</p>
+      <img [src]="imageSrc">
+</div>
+<ul>
+
+  <li> Para 1 </li>
+  <li> Para 2 </li>
+  <li> Para 3 </li>
+  <li> Default para </li>
+
+</ul>
+<h1>*NgSwitchcase</h1>
+<ul [ngSwitch]="stringChoice">
+
+  <li *ngSwitchCase="'A'"> Para 1 </li>
+  <li *ngSwitchCase="'B'"> Para 2 </li>
+  <li *ngSwitchCase="'C'"> Para 3 </li>
+  <li *ngSwitchDefault> Default para </li>
+
+</ul>
+
+<div [ngSwitch]="stringChoice">
+
+  <div *ngSwitchCase="'A'"> Div 1 </div>
+  <div *ngSwitchCase="'B'"> Div 2 </div>
+  <div *ngSwitchCase="'C'"> Div 3 </div>
+  <div *ngSwitchDefault> Default div </div>
+
+</div>
+
+<p>My para</p>
+<h1> *ngFor</h1>
+
+<ol>
+  <li *ngFor="let name of countryNames">
+    {{name}}
+  </li>
+</ol>
+<div>
+  <h1>Employee details.</h1>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.salary}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <h1>Employee Form</h1>
+  <form #userForm="ngForm">
+    <label for="id">ID:</label>
+    <input type="number" [(ngModel)]="employee.id" name="id" id="id">
+    <br>
+    <label for="ename">Name:</label>
+    <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename" pattern="[A-Za-z ]{3,}"
+      title="Only chars are allowed,Min 3 char required" required>
+    <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+      <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+      <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+        allowed.</p>
+
+    </div>
+    <br>
+    <label for="salaryid">Salary:</label>
+    <input type="number" [(ngModel)]="employee.salary" #salaryRef="ngModel" name="esalary" id="salaryid" min=0 required>
+    <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty)">
+      <p *ngIf="salaryRef.errors?.['required']" class="text-danger">Salary is required, cant be balnk.</p>
+      <p *ngIf="salaryRef.errors?.['min']" class="text-danger">salary must be > 0.</p>
+
+    </div>
+    <br>
+    <input type="submit" (click)="displayUserForm()" [disabled]="!userForm.valid" value="submit">
+  </form>
+</div>

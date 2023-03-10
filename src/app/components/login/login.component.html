@@ -1,0 +1,29 @@
+<p>login works!</p>
+
+<div>
+    <h1>Employee Form</h1>
+    <form #userForm="ngForm">
+      <label for="id">ID:</label>
+      <input type="number" [(ngModel)]="employee.id" name="id" id="id">
+      <br>
+      <label for="ename">Name:</label>
+      <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename" pattern="[A-Za-z ]{3,}"
+        title="Only chars are allowed,Min 3 char required" required>
+      <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+        <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+        <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+          allowed.</p>
+  
+      </div>
+      <br>
+      <label for="salaryid">Salary:</label>
+      <input type="number" [(ngModel)]="employee.salary" #salaryRef="ngModel" name="esalary" id="salaryid" min=0 required>
+      <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty)">
+        <p *ngIf="salaryRef.errors?.['required']" class="text-danger">Salary is required, cant be balnk.</p>
+        <p *ngIf="salaryRef.errors?.['min']" class="text-danger">salary must be > 0.</p>
+  
+      </div>
+      <br>
+      <input type="submit" (click)="displayUserForm()" [disabled]="!userForm.valid" value="submit">
+    </form>
+  </div>
