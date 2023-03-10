@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from './model/Employee';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Online Mobile Application';
+  date: Date = new Date();
+  imageSrc: string = "../assets/images/disny.jpg";
+
+  name: string = "Ford";
+  password: string = "";
+  isVisible: boolean = true;
+  a: number = 15;
+  b: number = 10;
+
+  stringChoice = "D";
+
+  countryNames = ["India", "USA", "UK"];
+
+  employees: { id: number, name: string, salary: number }[] = [
+    { id: 1, name: "Arjun", salary: 1500.0 },
+    { id: 2, name: "Elakiya", salary: 1000.0 },
+    { id: 3, name: "Varshini", salary: 2500.0 }
+  ]
+
+  employee: Employee = { id: 0, name: "", salary: 0 };
+
+  greetUser(): void {
+    console.log("Welcome user");
+  }
+  displayName(): void {
+    // window.alert(this.name +":"+this.password);
+    console.log(this.name + this.password);
+    //return; // to exit function with out any value 
+  }
+  displayUserForm(){
+    console.log("displayUserForm()");
+    console.log(this.employee);
+  }
 }
