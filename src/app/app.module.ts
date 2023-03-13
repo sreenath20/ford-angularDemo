@@ -9,6 +9,7 @@ import { DemoComponent } from './components/demo/demo.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DeatailsComponent } from './components/deatails/deatails.component';
+import { DisplayAllEmployeesComponent } from './components/display-all-employees/display-all-employees.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DeatailsComponent } from './components/deatails/deatails.component';
     DemoComponent,
     HomeComponent,
     PageNotFoundComponent,
-    DeatailsComponent
+    DeatailsComponent,
+    DisplayAllEmployeesComponent
   ],
   imports: [
     BrowserModule,
