@@ -19,7 +19,11 @@ export class DemoComponent {
   a: number = 15;
   b: number = 10;
 
+  x: number = 0.259;
+  y: number = 1.3495;
+  pi: number = 3.14159265359;
   stringChoice = "D";
+  
 
   countryNames = ["India", "USA", "UK"];
 
@@ -28,6 +32,7 @@ export class DemoComponent {
     { id: 2, name: "Elakiya", salary: 1000.0 },
     { id: 3, name: "Varshini", salary: 2500.0 }
   ]
+  query:string="";
 
   employee: Employee = { id: 0, name: "", salary: 0 };
 

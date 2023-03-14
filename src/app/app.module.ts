@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DeatailsComponent } from './components/deatails/deatails.component';
 import { DisplayAllEmployeesComponent } from './components/display-all-employees/display-all-employees.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { EmployeeService } from './service/employee.service';
+import { UpperPipe } from './pipes/upper.pipe';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { DisplayAllEmployeesComponent } from './components/display-all-employees
     HomeComponent,
     PageNotFoundComponent,
     DeatailsComponent,
-    DisplayAllEmployeesComponent
+    DisplayAllEmployeesComponent,
+    SearchPipe,
+    UpperPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

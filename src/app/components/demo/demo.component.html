@@ -116,3 +116,99 @@
     <input type="submit" (click)="displayUserForm()" [disabled]="!userForm.valid" value="submit">
   </form>
 </div>
+<div>
+  <h1> Angular pipes demo</h1>
+  <h3>Built in pipes: date pipe</h3>
+  <p>date = {{date}}</p>
+  <p>date = {{date | date}}</p>
+  <p>date = {{date | date:'short'}}</p>
+  <p>date = {{date | date:'MMMM-dd-yy'}}</p>
+  <h3>UpperCasePipe</h3>
+  uppercase: {{title | uppercase}}
+  lowercase : {{title | lowercase}}
+  titlecase : {{title | titlecase}}
+  <h3> Currency pipe</h3>
+  <div>
+    <!--output '$0.26'-->
+    <p>X: {{x | currency}}</p>
+    <p>X: {{x | currency:'INR'}}</p>
+
+    <!--output 'CA$0.26'-->
+    <p>X: {{x | currency:'CAD'}}</p>
+
+    <!--output 'CAD0.26'-->
+    <p>X: {{x | currency:'CAD':'code'}}</p>
+
+    <!--output 'CA$0,001.35'-->
+    <p>Y: {{y | currency:'CAD':'symbol':'3.6-6'}}</p>
+
+    <!--output '$0,001.35'-->
+    <p>Y: {{y | currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
+
+    <!--output '0 001,35 CA$'-->
+    <p>Y: {{y | currency:'CAD':'symbol':'4.2-2'}}</p>
+
+    <!--output 'CLP1' because CLP has no cents-->
+    <p>Y: {{y | currency:'CLP'}}</p>
+  </div>
+  <h3>Number pipe</h3>
+  {{3.6 | number: '1.0-0'}}
+  <!--will output '4'-->
+  <br>
+  {{-3.63 | number:'1.1-2'}}
+  <!--will output '-4'-->
+  <div>
+
+    <p>
+      No specified formatting:
+      {{pi | number}}
+      <!--output: '3.142'-->
+    </p>
+
+    <p>
+      With digitsInfo parameter specified:
+      {{pi | number:'4.1-5'}}
+      <!--output: '0,003.14159'-->
+    </p>
+
+    <p>
+      With digitsInfo and
+      locale parameters specified:
+      {{pi | number:'4.1-5'}}
+      <!--output: '0 003,14159'  // :'fr-CA'-->
+    </p>
+
+  </div>
+  <h3> PercentPipe pipe</h3>
+  <div>
+    <!--output '26%'-->
+    <p>X: {{x | percent}}</p>
+
+    <!--output '0,134.950%'-->
+    <p>Y: {{y | percent:'4.3-5'}}</p>
+
+    <!--output '0 134,950 %'-->
+    <p>Y: {{y | percent:'4.3-5'}}</p>
+  </div>
+  <h3>Custom pipes</h3>
+  <p> {{title | upper:'lo'}}</p>
+
+  <h3>List of Employees</h3>
+  <p>Search</p>
+  <input type="text" [(ngModel)]="query" id="queryId" name="query">
+  <div>
+    <h1>Employee details.</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+      </tr>
+      <tr *ngFor="let emp of employees | search:query ">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
