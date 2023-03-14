@@ -13,6 +13,7 @@ import { DisplayAllEmployeesComponent } from './components/display-all-employees
 import { SearchPipe } from './pipes/search.pipe';
 import { EmployeeService } from './service/employee.service';
 import { UpperPipe } from './pipes/upper.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpperPipe } from './pipes/upper.pipe';
     DeatailsComponent,
     DisplayAllEmployeesComponent,
     SearchPipe,
-    UpperPipe
+    UpperPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

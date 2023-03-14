@@ -28,11 +28,18 @@ export class DemoComponent {
   countryNames = ["India", "USA", "UK"];
 
   employees: { id: number, name: string, salary: number }[] = [
-    { id: 1, name: "Arjun", salary: 1500.0 },
-    { id: 2, name: "Elakiya", salary: 1000.0 },
-    { id: 3, name: "Varshini", salary: 2500.0 }
+   
+    { id: 3, name: "Elakiya", salary: 1000.0 },
+    { id: 2, name: "Arjun", salary: 1500.0 },
+    { id: 1, name: "Varshini", salary: 2500.0 }
   ]
   query:string="";
+  field:string='id';
+
+  changeSortByFiled(field:string){
+
+    this.field = field;
+  }
 
   employee: Employee = { id: 0, name: "", salary: 0 };
 

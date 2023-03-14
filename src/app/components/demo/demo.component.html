@@ -211,4 +211,22 @@
       </tr>
     </table>
   </div>
+
+  <h1>Sort pipe</h1>
+  <h3>List of Employees</h3>
+  <div>
+    <h1>Employee details.</h1>
+    <table>
+      <tr>
+        <th (click)="changeSortByFiled('id')">Id</th>
+        <th (click)="changeSortByFiled('name')">Name</th>
+        <th (click)="changeSortByFiled('salary')">Salary</th>
+      </tr>
+      <tr *ngFor="let emp of employees | sort : field :'asc'">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
