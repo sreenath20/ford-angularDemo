@@ -15,6 +15,7 @@ import { EmployeeService } from './service/employee.service';
 import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import {HttpClientModule} from '@angular/common/http';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     DisplayAllEmployeesComponent,
     SearchPipe,
     UpperPipe,
-    SortPipe
+    SortPipe,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

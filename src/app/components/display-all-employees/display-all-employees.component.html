@@ -16,7 +16,12 @@
                 <td>{{emp.id}}</td>
                 <td>{{emp.name}}</td>
                 <td>{{emp.salary}}</td>
-                <td><input type="button" class="btn btn-danger" (click)="deleteEmployee(emp.id)" value="Delete"></td>
+                <td>
+                    <input type="button" class="btn btn-info" (click)="updateEmployee(emp)" value="Update">
+                
+                    <input type="button" class="btn btn-danger" (click)="deleteEmployee(emp.id)" value="Delete">
+                
+                </td>
             </tr>
         </tbody>
 

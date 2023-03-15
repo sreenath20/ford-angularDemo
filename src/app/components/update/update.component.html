@@ -1,0 +1,18 @@
+<p>update works!</p>
+<form>
+    Id:
+    <input type="text" [(ngModel)]="employee.id" name="id" id = "id" disabled>
+    Name:
+    <input type="text" [(ngModel)]="employee.name" name="name" id = "name" >
+    Salary:
+    <input type="number" [(ngModel)]="employee.salary" name="salary" id = "salary" > 
+    <input type="button" (click)="updateEmployee()" value="Update">
+
+    <div *ngIf="msg" class="alert alert-success" >
+        <p class="">{{msg}}</p>
+    </div>
+    <div *ngIf="errorMsg" class="alert alert-danger">
+        <p>{{errorMsg}}</p> 
+    </div>
+
+</form>
