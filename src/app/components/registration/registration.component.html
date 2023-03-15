@@ -1,61 +1,62 @@
-
-
 <div class="container">
-    <h1><p>New Employee registration:</p></h1>
-    <form #userForm="ngForm">
-  
-        <div class="row">
-            <div class="col-25">
-              <label for="id">Id:</label>
-      
-            </div>
-            <div class="col-75">
-              <input type="number" [(ngModel)]="employee.id" #idRef="ngModel" name="eid" id="eid"
-                min=0 title="Enter positve id value" required>
-              <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
-                <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be balnk.</p>
-                <p *ngIf="idRef.errors?.['min']" class="text-danger">Id must be positve.</p>
-              </div>
-            </div>
-      
-          </div>
-      <div class="row">
-        <div class="col-25">
-          <label for="ename">Name:</label>
-  
-        </div>
-        <div class="col-75">
-          <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
-            pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
-          <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
-            <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
-            <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
-              allowed.</p>
-          </div>
-        </div>
-  
+  <h1>
+    <p>New Employee registration:</p>
+  </h1>
+  <form #userForm="ngForm">
+
+    <!-- <div class="row">
+      <div class="col-25">
+        <label for="id">Id:</label>
+
       </div>
-  
-      <div class="row">
-  
-        <div class="col-25">
-          <label for="salaryId">Salary:</label>
+      <div class="col-75">
+        <input type="number" [(ngModel)]="employee.id" #idRef="ngModel" name="eid" id="eid" min=0
+          title="Enter positve id value" required>
+        <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+          <p *ngIf="idRef.errors?.['required']" class="text-danger">Id is required, cant be balnk.</p>
+          <p *ngIf="idRef.errors?.['min']" class="text-danger">Id must be positve.</p>
         </div>
-  
-        <div class="col-75">
-          <input type="number" [(ngModel)]="employee.salary" #salaryRef="ngModel" name="salary" id="salaryId"  min=0 required>
-  
-          <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty)">
-            <p *ngIf="salaryRef.errors?.['required']" class="text-danger">Salary is required, cant be balnk.</p>
-            <p *ngIf="salaryRef.errors?.['min']" class="text-danger">Salary must be positive.</p>
-  
-          </div>
+      </div>
+
+    </div> -->
+    <div class="row">
+      <div class="col-25">
+        <label for="ename">Name:</label>
+
+      </div>
+      <div class="col-75">
+        <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
+          pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+        <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+          <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+          <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+            allowed.</p>
         </div>
-  
       </div>
-  
-      <div class="row">
-        <input type="submit" (click)="onSubmit()" [disabled]="!userForm.valid" value="Submit">
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-25">
+        <label for="salaryId">Salary:</label>
       </div>
-    </form>
-  </div>
+
+      <div class="col-75">
+        <input type="number" [(ngModel)]="employee.salary" #salaryRef="ngModel" name="salary" id="salaryId" min=0
+          required>
+
+        <div *ngIf="salaryRef.invalid && (salaryRef.touched || salaryRef.dirty)">
+          <p *ngIf="salaryRef.errors?.['required']" class="text-danger">Salary is required, cant be balnk.</p>
+          <p *ngIf="salaryRef.errors?.['min']" class="text-danger">Salary must be positive.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <input type="submit" (click)="onSubmit()" [disabled]="!userForm.valid" value="Submit">
+    </div>
+  </form>
+</div>

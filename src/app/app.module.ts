@@ -14,6 +14,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { EmployeeService } from './service/employee.service';
 import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SortPipe } from './pipes/sort.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]

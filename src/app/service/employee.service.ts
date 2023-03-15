@@ -6,7 +6,7 @@ import { Employee } from '../model/Employee';
 })
 export class EmployeeService implements OnInit{
 
-  employees:Employee[]=[];
+  employees:Employee[]=[]; // its not permanent
 
   constructor() { 
     this.employees.push(new Employee(1,"Ford",25000.0));
