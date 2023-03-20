@@ -1,13 +1,47 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item"><a routerLink="home" class="nav-link">Home</a></li>
-    <li class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
-    <li class="nav-item"><a routerLink="/registration" class="nav-link">Registration</a></li>
-    <li class="nav-item"><a routerLink="/demo" class="nav-link">Demo</a></li>
+<!-- public menu -->
+<div *ngIf="checkRole() == 'public'">
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="home" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
+      <li class="nav-item"><a routerLink="/registration" class="nav-link">Registration</a></li>
 
-    <li class="nav-item"><a routerLink="/employees" class="nav-link">Display AllEmployees</a></li>
+    </ul>
+  </nav>
 
-  </ul>
-</nav>
+</div>
 
+<!-- user menu -->
+<div *ngIf="checkRole() =='user'">
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="home" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/demo" class="nav-link">Demo</a></li>
+
+      <li class="nav-item"><a routerLink="/profile" class="nav-link">Profile </a></li>
+
+      <li class="nav-item"><a (click)="userLogout()" class="nav-link">LogOut </a> </li>
+
+    </ul>
+  </nav>
+
+</div>
+
+<!-- admin menu -->
+<div *ngIf="checkRole() =='admin'">
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a routerLink="home" class="nav-link">Home</a></li>
+      <li class="nav-item"><a routerLink="/demo" class="nav-link">Demo</a></li>
+
+      <li class="nav-item"><a routerLink="/profile" class="nav-link">Profile </a></li>
+
+      <li class="nav-item"><a routerLink="/employees" class="nav-link">All Employees </a></li>
+
+      <li class="nav-item"><a (click)="userLogout()" class="nav-link">LogOut </a> </li>
+
+    </ul>
+  </nav>
+
+</div>
 <router-outlet></router-outlet>

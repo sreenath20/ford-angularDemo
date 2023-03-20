@@ -4,16 +4,15 @@
 
     <div class="row">
       <div class="col-25">
-        <label for="ename">Name:</label>
+        <label for="ename">Email:</label>
 
       </div>
       <div class="col-75">
-        <input type="text" [(ngModel)]="employee.name" #nameRef="ngModel" name="ename" id="ename"
-          pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+        <input type="email" [(ngModel)]="employee.email" #nameRef="ngModel" name="ename" id="ename"
+           title="Please enter valid email, e.g name@gmail.com" required>
         <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
-          <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
-          <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
-            allowed.</p>
+          <p *ngIf="nameRef.errors?.['required']" class="text-danger">Email is required, cant be balnk.</p>
+          <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Please enter valid email, name@gmail.com</p>
         </div>
       </div>
 
@@ -27,11 +26,11 @@
 
       <div class="col-75">
         <input type="password" [(ngModel)]="employee.password" #passwordRef="ngModel" name="password" id="passwordId"
-          pattern="[a-zA-Z0-9]{8,}" required>
+          pattern="[a-zA-Z0-9]{7,}" required>
 
         <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
           <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required, cant be balnk.</p>
-          <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be at least 8 chars.</p>
+          <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Password must be at least 7 chars.</p>
 
         </div>
       </div>

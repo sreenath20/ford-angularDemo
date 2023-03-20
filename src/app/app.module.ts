@@ -16,6 +16,7 @@ import { UpperPipe } from './pipes/upper.pipe';
 import { SortPipe } from './pipes/sort.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import { UpdateComponent } from './components/update/update.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UpdateComponent } from './components/update/update.component';
     SearchPipe,
     UpperPipe,
     SortPipe,
-    UpdateComponent
+    UpdateComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

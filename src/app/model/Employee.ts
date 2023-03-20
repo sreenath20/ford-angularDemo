@@ -1,6 +1,6 @@
 export class Employee{
     
-    constructor(public id?: number,public name?: string,public salary?: number,public password?: string,email?:string){}
+    constructor(public id?: number,public name?: string,public salary?: number,public email?:string, public password?: string){}
 }
 
 // JSOn needed in Spring boot
